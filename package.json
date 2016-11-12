@@ -3,12 +3,16 @@
   "publishConfig": {
       "registry": "https://registry.npmjs.org/"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Provide the eslint configs",
   "main": "index.js",
   "author": "5Minds IT-Solutions GmbH & Co. KG <info@5minds.de>",
   "maintainer": "Martin Möllenbeck <martin.moellenbeck@5minds.de>",
   "homepage": "https://github.com/5minds/eslint-config-5minds",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/5minds/eslint-config-5minds"
+  },
   "license": "SEE LICENSE IN LICENSE.md",
   "keywords": [
     "eslint",
