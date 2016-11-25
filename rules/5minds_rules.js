@@ -21,6 +21,7 @@ module.exports = {
     'no-void': 'off',
     'no-bitwise': ['error', {allow: ['~', '^', '|', '&', '|=', '&=', '^=']}],
     'padded-blocks': ['error', {classes: 'always'}],
+    'no-multiple-empty-lines': ['error', {max: 1}],
     strict: ['error', 'safe'],
 
     // specify the maximum length of a line in your program
