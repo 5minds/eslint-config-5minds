@@ -101,13 +101,13 @@
     // bad
     var count = 1;
     if (true) {
-      count += 1;
+        count += 1;
     }
 
     // good, use the let.
     let count = 1;
     if (true) {
-      count += 1;
+        count += 1;
     }
     ```
 
@@ -117,8 +117,8 @@
     ```javascript
     // const and let only exist in the blocks they are defined in.
     {
-      let a = 1;
-      const b = 1;
+        let a = 1;
+        const b = 1;
     }
     console.log(a); // ReferenceError
     console.log(b); // ReferenceError
@@ -149,21 +149,21 @@
     ```javascript
 
     function getKey(k) {
-      return `a key named ${k}`;
+        return `a key named ${k}`;
     }
 
     // bad
     const obj = {
-      id: 5,
-      name: 'San Francisco',
+        id: 5,
+        name: 'San Francisco',
     };
     obj[getKey('enabled')] = true;
 
     // good
     const obj = {
-      id: 5,
-      name: 'San Francisco',
-      [getKey('enabled')]: true,
+        id: 5,
+        name: 'San Francisco',
+        [getKey('enabled')]: true,
     };
     ```
 
@@ -173,20 +173,20 @@
     ```javascript
     // bad
     const atom = {
-      value: 1,
+        value: 1,
 
-      addValue: function (value) {
-        return atom.value + value;
-      },
+        addValue: function (value) {
+          return atom.value + value;
+        },
     };
 
     // good
     const atom = {
-      value: 1,
+        value: 1,
 
-      addValue(value) {
-        return atom.value + value;
-      },
+        addValue(value) {
+          return atom.value + value;
+        },
     };
     ```
 
@@ -198,12 +198,12 @@
 
     // bad
     const obj = {
-      lukeSkywalker,
+        lukeSkywalker,
     };
 
     // good
     const obj = {
-      lukeSkywalker: lukeSkywalker,
+        lukeSkywalker: lukeSkywalker,
     };
     ```
 
@@ -220,22 +220,22 @@
 
     // bad
     const obj = {
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      lukeSkywalker,
-      episodeThree: 3,
-      mayTheFourth: 4,
-      anakinSkywalker,
+        episodeOne: 1,
+        twoJediWalkIntoACantina: 2,
+        lukeSkywalker,
+        episodeThree: 3,
+        mayTheFourth: 4,
+        anakinSkywalker,
     };
 
     // good
     const obj = {
-      lukeSkywalker,
-      anakinSkywalker,
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      episodeThree: 3,
-      mayTheFourth: 4,
+        lukeSkywalker,
+        anakinSkywalker,
+        episodeOne: 1,
+        twoJediWalkIntoACantina: 2,
+        episodeThree: 3,
+        mayTheFourth: 4,
     };
     ```
 
@@ -249,16 +249,16 @@
     ```javascript
     // bad
     const bad = {
-      'foo': 3,
-      'bar': 4,
-      'data-blah': 5,
+        'foo': 3,
+        'bar': 4,
+        'data-blah': 5,
     };
 
     // good
     const good = {
-      foo: 3,
-      bar: 4,
-      'data-blah': 5,
+        foo: 3,
+        bar: 4,
+        'data-blah': 5,
     };
     ```
 
@@ -310,14 +310,14 @@
     ```javascript
     // bad
     const superman = {
-      default: { clark: 'kent' },
-      private: true,
+        default: { clark: 'kent' },
+        private: true,
     };
 
     // good
     const superman = {
-      defaults: { clark: 'kent' },
-      hidden: true,
+        defaults: { clark: 'kent' },
+        hidden: true,
     };
     ```
 
@@ -327,17 +327,17 @@
     ```javascript
     // bad
     const superman = {
-      class: 'alien',
+        class: 'alien',
     };
 
     // bad
     const superman = {
-      Klass: 'alien',
+        Klass: 'alien',
     };
 
     // good
     const superman = {
-      type: 'alien',
+        type: 'alien',
     };
     ```
 
@@ -379,7 +379,7 @@
     let i;
 
     for (i = 0; i < len; i += 1) {
-      itemsCopy[i] = items[i];
+        itemsCopy[i] = items[i];
     }
 
     // good
@@ -400,8 +400,8 @@
     ```javascript
     // good
     [1, 2, 3].map((x) => {
-      const y = x + 1;
-      return x * y;
+        const y = x + 1;
+        return x * y;
     });
 
     // good
@@ -410,36 +410,36 @@
     // bad
     const flat = {};
     [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
-      const flatten = memo.concat(item);
-      flat[index] = flatten;
+        const flatten = memo.concat(item);
+        flat[index] = flatten;
     });
 
     // good
     const flat = {};
     [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
-      const flatten = memo.concat(item);
-      flat[index] = flatten;
-      return flatten;
+        const flatten = memo.concat(item);
+        flat[index] = flatten;
+        return flatten;
     });
 
     // bad
     inbox.filter((msg) => {
-      const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
-      } else {
-        return false;
-      }
+        const { subject, author } = msg;
+        if (subject === 'Mockingbird') {
+            return author === 'Harper Lee';
+        } else {
+            return false;
+        }
     });
 
     // good
     inbox.filter((msg) => {
-      const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
-      }
+        const { subject, author } = msg;
+        if (subject === 'Mockingbird') {
+            return author === 'Harper Lee';
+        }
 
-      return false;
+        return false;
     });
     ```
 
@@ -451,34 +451,34 @@
   ```javascript
   // bad
   const arr = [
-    [0, 1], [2, 3], [4, 5],
+      [0, 1], [2, 3], [4, 5],
   ];
 
   const objectInArray = [{
-    id: 1,
+      id: 1,
   }, {
-    id: 2,
+      id: 2,
   }];
 
   const numberInArray = [
-    1, 2,
+      1, 2,
   ];
 
   // good
   const arr = [[0, 1], [2, 3], [4, 5]];
 
   const objectInArray = [
-    {
-      id: 1,
-    },
-    {
-      id: 2,
-    },
+      {
+          id: 1,
+      },
+      {
+          id: 2,
+      },
   ];
 
   const numberInArray = [
-    1,
-    2,
+      1,
+      2,
   ];
   ```
 
@@ -496,21 +496,21 @@
     ```javascript
     // bad
     function getFullName(user) {
-      const firstName = user.firstName;
-      const lastName = user.lastName;
+        const firstName = user.firstName;
+        const lastName = user.lastName;
 
-      return `${firstName} ${lastName}`;
+        return `${firstName} ${lastName}`;
     }
 
     // good
     function getFullName({ firstName, lastName }) {
-      return `${firstName} ${lastName}`;
+        return `${firstName} ${lastName}`;
     }
 
     // best
     function getFullName(user) {
-      const { firstName, lastName } = user;
-      return `${firstName} ${lastName}`;
+        const { firstName, lastName } = user;
+        return `${firstName} ${lastName}`;
     }
     ```
 
@@ -538,8 +538,8 @@
     ```javascript
     // bad
     function processInput(input) {
-      // then a miracle occurs
-      return [left, right, top, bottom];
+        // then a miracle occurs
+        return [left, right, top, bottom];
     }
 
     // the caller needs to think about the order of return data
@@ -547,8 +547,8 @@
 
     // good
     function processInput(input) {
-      // then a miracle occurs
-      return { left, right, top, bottom };
+        // then a miracle occurs
+        return { left, right, top, bottom };
     }
 
     // the caller selects only the data they need
@@ -607,22 +607,22 @@
     ```javascript
     // bad
     function sayHi(name) {
-      return 'How are you, ' + name + '?';
+        return 'How are you, ' + name + '?';
     }
 
     // bad
     function sayHi(name) {
-      return ['How are you, ', name, '?'].join();
+        return ['How are you, ', name, '?'].join();
     }
 
     // bad
     function sayHi(name) {
-      return `How are you, ${ name }?`;
+        return `How are you, ${ name }?`;
     }
 
     // good
     function sayHi(name) {
-      return `How are you, ${name}?`;
+        return `How are you, ${name}?`;
     }
     ```
 
@@ -660,17 +660,17 @@
     ```javascript
     // bad
     function foo() {
-      // ...
+        // ...
     }
 
     // bad
     const foo = function () {
-      // ...
+        // ...
     };
 
     // good
     const foo = function bar() {
-      // ...
+        // ...
     };
     ```
 
@@ -684,7 +684,7 @@
     ```javascript
     // immediately-invoked function expression (IIFE)
     (function () {
-      console.log('Welcome to the Internet. Please follow me.');
+        console.log('Welcome to the Internet. Please follow me.');
     }());
     ```
 
@@ -697,17 +697,17 @@
     ```javascript
     // bad
     if (currentUser) {
-      function test() {
-        console.log('Nope.');
-      }
+        function test() {
+          console.log('Nope.');
+        }
     }
 
     // good
     let test;
     if (currentUser) {
-      test = () => {
-        console.log('Yup.');
-      };
+        test = () => {
+            console.log('Yup.');
+        };
     }
     ```
 
@@ -717,12 +717,12 @@
     ```javascript
     // bad
     function foo(name, options, arguments) {
-      // ...
+        // ...
     }
 
     // good
     function foo(name, options, args) {
-      // ...
+        // ...
     }
     ```
 
@@ -736,13 +736,13 @@
     ```javascript
     // bad
     function concatenateAll() {
-      const args = Array.prototype.slice.call(arguments);
-      return args.join('');
+        const args = Array.prototype.slice.call(arguments);
+        return args.join('');
     }
 
     // good
     function concatenateAll(...args) {
-      return args.join('');
+        return args.join('');
     }
     ```
 
@@ -752,24 +752,24 @@
     ```javascript
     // really bad
     function handleThings(opts) {
-      // No! We shouldn't mutate function arguments.
-      // Double bad: if opts is falsy it'll be set to an object which may
-      // be what you want but it can introduce subtle bugs.
-      opts = opts || {};
-      // ...
+        // No! We shouldn't mutate function arguments.
+        // Double bad: if opts is falsy it'll be set to an object which may
+        // be what you want but it can introduce subtle bugs.
+        opts = opts || {};
+        // ...
     }
 
     // still bad
     function handleThings(opts) {
-      if (opts === void 0) {
-        opts = {};
-      }
-      // ...
+        if (opts === void 0) {
+            opts = {};
+        }
+        // ...
     }
 
     // good
     function handleThings(opts = {}) {
-      // ...
+        // ...
     }
     ```
 
@@ -784,7 +784,7 @@
     var b = 1;
     // bad
     function count(a = b++) {
-      console.log(a);
+        console.log(a);
     }
     count();  // 1
     count();  // 2
@@ -798,12 +798,12 @@
     ```javascript
     // bad
     function handleThings(opts = {}, name) {
-      // ...
+        // ...
     }
 
     // good
     function handleThings(name, opts = {}) {
-      // ...
+        // ...
     }
     ```
 
@@ -849,12 +849,12 @@
     ```javascript
     // bad
     function f1(obj) {
-      obj.key = 1;
+        obj.key = 1;
     }
 
     // good
     function f2(obj) {
-      const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
+        const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
     }
     ```
 
@@ -868,23 +868,23 @@
     ```javascript
     // bad
     function f1(a) {
-      a = 1;
-      // ...
+        a = 1;
+        // ...
     }
 
     function f2(a) {
-      if (!a) { a = 1; }
-      // ...
+        if (!a) { a = 1; }
+        // ...
     }
 
     // good
     function f3(a) {
-      const b = a || 1;
-      // ...
+        const b = a || 1;
+        // ...
     }
 
     function f4(a = 1) {
-      // ...
+        // ...
     }
     ```
 
@@ -919,28 +919,28 @@
     function foo(bar,
                  baz,
                  quux) {
-      // ...
+        // ...
     }
 
     // good
     function foo(
-      bar,
-      baz,
-      quux,
+        bar,
+        baz,
+        quux,
     ) {
-      // ...
+        // ...
     }
 
     // bad
     console.log(foo,
-      bar,
-      baz);
+        bar,
+        baz);
 
     // good
     console.log(
-      foo,
-      bar,
-      baz,
+        foo,
+        bar,
+        baz,
     );
     ```
 
@@ -962,14 +962,14 @@
     ```javascript
     // bad
     [1, 2, 3].map(function (x) {
-      const y = x + 1;
-      return x * y;
+        const y = x + 1;
+        return x * y;
     });
 
     // good
     [1, 2, 3].map((x) => {
-      const y = x + 1;
-      return x * y;
+        const y = x + 1;
+        return x * y;
     });
     ```
 
@@ -983,8 +983,8 @@
     ```javascript
     // bad
     [1, 2, 3].map(number => {
-      const nextNumber = number + 1;
-      `A string containing the ${nextNumber}.`;
+        const nextNumber = number + 1;
+        `A string containing the ${nextNumber}.`;
     });
 
     // bad
@@ -992,13 +992,13 @@
 
     // bad
     [1, 2, 3].map((number, index) => ({
-      [index]: number,
+        [index]: number,
     }));
 
     // good
     [1, 2, 3].map((number) => {
-      const nextNumber = number + 1;
-      return `A string containing the ${nextNumber}.`;
+        const nextNumber = number + 1;
+        return `A string containing the ${nextNumber}.`;
     });
     ```
 
@@ -1012,17 +1012,17 @@
     ```javascript
     // bad
     ['get', 'post', 'put'].map(httpMethod => Object.prototype.hasOwnProperty.call(
-        httpMagicObjectWithAVeryLongName,
-        httpMethod,
-      )
+          httpMagicObjectWithAVeryLongName,
+          httpMethod,
+        )
     );
 
     // good
     ['get', 'post', 'put'].map(httpMethod => (
-      Object.prototype.hasOwnProperty.call(
-        httpMagicObjectWithAVeryLongName,
-        httpMethod,
-      )
+        Object.prototype.hasOwnProperty.call(
+            httpMagicObjectWithAVeryLongName,
+            httpMethod,
+        )
     ));
     ```
 
@@ -1043,14 +1043,14 @@
 
     // bad
     [1, 2, 3].map(x => {
-      const y = x + 1;
-      return x * y;
+        const y = x + 1;
+        return x * y;
     });
 
     // good
     [1, 2, 3].map((x) => {
-      const y = x + 1;
-      return x * y;
+        const y = x + 1;
+        return x * y;
     });
     ```
 
@@ -1069,8 +1069,8 @@
 
     // good
     const itemHeight = (item) => {
-      const { height, largeSize, smallSize } = item;
-      return height > 256 ? largeSize : smallSize;
+        const { height, largeSize, smallSize } = item;
+        return height > 256 ? largeSize : smallSize;
     };
     ```
 
@@ -1089,25 +1089,25 @@
     ```javascript
     // bad
     function Queue(contents = []) {
-      this.queue = [...contents];
+        this.queue = [...contents];
     }
     Queue.prototype.pop = function () {
-      const value = this.queue[0];
-      this.queue.splice(0, 1);
-      return value;
+        const value = this.queue[0];
+        this.queue.splice(0, 1);
+        return value;
     };
 
 
     // good
     class Queue {
-      constructor(contents = []) {
-        this.queue = [...contents];
-      }
-      pop() {
-        const value = this.queue[0];
-        this.queue.splice(0, 1);
-        return value;
-      }
+        constructor(contents = []) {
+            this.queue = [...contents];
+        }
+        pop() {
+            const value = this.queue[0];
+            this.queue.splice(0, 1);
+            return value;
+        }
     }
     ```
 
@@ -1122,11 +1122,11 @@
     // bad
     const inherits = require('inherits');
     function PeekableQueue(contents) {
-      Queue.apply(this, contents);
+        Queue.apply(this, contents);
     }
     inherits(PeekableQueue, Queue);
     PeekableQueue.prototype.peek = function () {
-      return this.queue[0];
+        return this.queue[0];
     };
 
     // good
@@ -1143,12 +1143,12 @@
     ```javascript
     // bad
     Jedi.prototype.jump = function () {
-      this.jumping = true;
-      return true;
+        this.jumping = true;
+        return true;
     };
 
     Jedi.prototype.setHeight = function (height) {
-      this.height = height;
+        this.height = height;
     };
 
     const luke = new Jedi();
@@ -1157,21 +1157,21 @@
 
     // good
     class Jedi {
-      jump() {
-        this.jumping = true;
-        return this;
-      }
+        jump() {
+            this.jumping = true;
+            return this;
+        }
 
-      setHeight(height) {
-        this.height = height;
-        return this;
-      }
+        setHeight(height) {
+            this.height = height;
+            return this;
+        }
     }
 
     const luke = new Jedi();
 
     luke.jump()
-      .setHeight(20);
+        .setHeight(20);
     ```
 
 
@@ -1180,17 +1180,17 @@
 
     ```javascript
     class Jedi {
-      constructor(options = {}) {
-        this.name = options.name || 'no name';
-      }
+        constructor(options = {}) {
+            this.name = options.name || 'no name';
+        }
 
-      getName() {
-        return this.name;
-      }
+        getName() {
+            return this.name;
+        }
 
-      toString() {
-        return `Jedi - ${this.getName()}`;
-      }
+        toString() {
+            return `Jedi - ${this.getName()}`;
+        }
     }
     ```
 
@@ -1200,26 +1200,26 @@
     ```javascript
     // bad
     class Jedi {
-      constructor() {}
+        constructor() {}
 
-      getName() {
-        return this.name;
+        getName() {
+            return this.name;
+        }
       }
-    }
 
     // bad
     class Rey extends Jedi {
-      constructor(...args) {
-        super(...args);
-      }
+        constructor(...args) {
+            super(...args);
+        }
     }
 
     // good
     class Rey extends Jedi {
-      constructor(...args) {
-        super(...args);
-        this.name = 'Rey';
-      }
+        constructor(...args) {
+            super(...args);
+            this.name = 'Rey';
+        }
     }
     ```
 
@@ -1233,18 +1233,18 @@
     ```javascript
     // bad
     class Foo {
-      bar() { return 1; }
-      bar() { return 2; }
+        bar() { return 1; }
+        bar() { return 2; }
     }
 
     // good
     class Foo {
-      bar() { return 1; }
+        bar() { return 1; }
     }
 
     // good
     class Foo {
-      bar() { return 2; }
+        bar() { return 2; }
     }
     ```
 
@@ -1323,8 +1323,8 @@
 
     // good
     import foo, {
-      named1,
-      named2,
+        named1,
+        named2,
     } from 'foo';
     ```
 
@@ -1393,11 +1393,11 @@
 
     // good
     import {
-      longNameA,
-      longNameB,
-      longNameC,
-      longNameD,
-      longNameE,
+        longNameA,
+        longNameB,
+        longNameC,
+        longNameD,
+        longNameE,
     } from 'path';
     ```
 
@@ -1439,7 +1439,7 @@
     // bad
     let sum = 0;
     for (let num of numbers) {
-      sum += num;
+        sum += num;
     }
     sum === 15;
 
@@ -1455,7 +1455,7 @@
     // bad
     const increasedByOne = [];
     for (let i = 0; i < numbers.length; i++) {
-      increasedByOne.push(numbers[i] + 1);
+        increasedByOne.push(numbers[i] + 1);
     }
 
     // good
@@ -1483,8 +1483,8 @@
 
     ```javascript
     const luke = {
-      jedi: true,
-      age: 28,
+        jedi: true,
+        age: 28,
     };
 
     // bad
@@ -1499,12 +1499,12 @@
 
     ```javascript
     const luke = {
-      jedi: true,
-      age: 28,
+        jedi: true,
+        age: 28,
     };
 
     function getProp(prop) {
-      return luke[prop];
+        return luke[prop];
     }
 
     const isJedi = getProp('jedi');
@@ -1589,34 +1589,34 @@
     ```javascript
     // bad - unnecessary function call
     function checkName(hasName) {
-      const name = getName();
+        const name = getName();
 
-      if (hasName === 'test') {
-        return false;
-      }
+        if (hasName === 'test') {
+            return false;
+        }
 
-      if (name === 'test') {
-        this.setName('');
-        return false;
-      }
+        if (name === 'test') {
+            this.setName('');
+            return false;
+        }
 
-      return name;
+        return name;
     }
 
     // good
     function checkName(hasName) {
-      if (hasName === 'test') {
-        return false;
-      }
+        if (hasName === 'test') {
+            return false;
+        }
 
-      const name = getName();
+        const name = getName();
 
-      if (name === 'test') {
-        this.setName('');
-        return false;
-      }
+        if (name === 'test') {
+            this.setName('');
+            return false;
+        }
 
-      return name;
+        return name;
     }
     ```
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
@@ -1629,11 +1629,11 @@
     ```javascript
     // bad
     (function example() {
-      // JavaScript interprets this as
-      // let a = ( b = ( c = 1 ) );
-      // The let keyword only applies to variable a; variables b and c become
-      // global variables.
-      let a = b = c = 1;
+        // JavaScript interprets this as
+        // let a = ( b = ( c = 1 ) );
+        // The let keyword only applies to variable a; variables b and c become
+        // global variables.
+        let a = b = c = 1;
     }());
 
     console.log(a); // undefined
@@ -1642,9 +1642,9 @@
 
     // good
     (function example() {
-      let a = 1;
-      let b = a;
-      let c = a;
+        let a = 1;
+        let b = a;
+        let c = a;
     }());
 
     console.log(a); // undefined
@@ -1672,11 +1672,11 @@
     let sum = 0;
     let truthyCount = 0;
     for (let i = 0; i < array.length; i++) {
-      let value = array[i];
-      sum += value;
-      if (value) {
-        truthyCount++;
-      }
+        let value = array[i];
+        sum += value;
+        if (value) {
+            truthyCount++;
+        }
     }
 
     // good
@@ -1702,7 +1702,7 @@
     // we know this wouldn't work (assuming there
     // is no notDefined global variable)
     function example() {
-      console.log(notDefined); // => throws a ReferenceError
+        console.log(notDefined); // => throws a ReferenceError
     }
 
     // creating a variable declaration after you
@@ -1710,24 +1710,24 @@
     // variable hoisting. Note: the assignment
     // value of `true` is not hoisted.
     function example() {
-      console.log(declaredButNotAssigned); // => undefined
-      var declaredButNotAssigned = true;
+        console.log(declaredButNotAssigned); // => undefined
+        var declaredButNotAssigned = true;
     }
 
     // the interpreter is hoisting the variable
     // declaration to the top of the scope,
     // which means our example could be rewritten as:
     function example() {
-      let declaredButNotAssigned;
-      console.log(declaredButNotAssigned); // => undefined
-      declaredButNotAssigned = true;
+        let declaredButNotAssigned;
+        console.log(declaredButNotAssigned); // => undefined
+        declaredButNotAssigned = true;
     }
 
     // using const and let
     function example() {
-      console.log(declaredButNotAssigned); // => throws a ReferenceError
-      console.log(typeof declaredButNotAssigned); // => throws a ReferenceError
-      const declaredButNotAssigned = true;
+        console.log(declaredButNotAssigned); // => throws a ReferenceError
+        console.log(typeof declaredButNotAssigned); // => throws a ReferenceError
+        const declaredButNotAssigned = true;
     }
     ```
 
@@ -1736,12 +1736,12 @@
 
     ```javascript
     function example() {
-      console.log(anonymous); // => undefined
+        console.log(anonymous); // => undefined
 
-      anonymous(); // => TypeError anonymous is not a function
+        anonymous(); // => TypeError anonymous is not a function
 
-      var anonymous = function () {
-        console.log('anonymous function expression');
+        var anonymous = function () {
+            console.log('anonymous function expression');
       };
     }
     ```
@@ -1751,27 +1751,27 @@
 
     ```javascript
     function example() {
-      console.log(named); // => undefined
+        console.log(named); // => undefined
 
-      named(); // => TypeError named is not a function
+        named(); // => TypeError named is not a function
 
-      superPower(); // => ReferenceError superPower is not defined
+        superPower(); // => ReferenceError superPower is not defined
 
-      var named = function superPower() {
-        console.log('Flying');
-      };
+        var named = function superPower() {
+          console.log('Flying');
+        };
     }
 
     // the same is true when the function name
     // is the same as the variable name.
     function example() {
-      console.log(named); // => undefined
+        console.log(named); // => undefined
 
-      named(); // => TypeError named is not a function
+        named(); // => TypeError named is not a function
 
-      var named = function named() {
-        console.log('named');
-      };
+        var named = function named() {
+            console.log('named');
+        };
     }
     ```
 
@@ -1780,11 +1780,11 @@
 
     ```javascript
     function example() {
-      superPower(); // => Flying
+        superPower(); // => Flying
 
-      function superPower() {
-        console.log('Flying');
-      }
+        function superPower() {
+            console.log('Flying');
+        }
     }
     ```
 
@@ -1810,8 +1810,8 @@
 
     ```javascript
     if ([0] && []) {
-      // true
-      // an array (even an empty one) is an object, objects will evaluate to true
+        // true
+        // an array (even an empty one) is an object, objects will evaluate to true
     }
     ```
 
@@ -1821,32 +1821,32 @@
     ```javascript
     // bad
     if (isValid === true) {
-      // ...
+        // ...
     }
 
     // good
     if (isValid) {
-      // ...
+        // ...
     }
 
     // bad
     if (name) {
-      // ...
+        // ...
     }
 
     // good
     if (name !== '') {
-      // ...
+        // ...
     }
 
     // bad
     if (collection.length) {
-      // ...
+        // ...
     }
 
     // good
     if (collection.length > 0) {
-      // ...
+        // ...
     }
     ```
 
@@ -1865,43 +1865,43 @@
     ```javascript
     // bad
     switch (foo) {
-      case 1:
-        let x = 1;
-        break;
-      case 2:
-        const y = 2;
-        break;
-      case 3:
-        function f() {
-          // ...
-        }
-        break;
-      default:
-        class C {}
+        case 1:
+            let x = 1;
+            break;
+        case 2:
+            const y = 2;
+            break;
+        case 3:
+            function f() {
+                // ...
+            }
+            break;
+        default:
+            class C {}
     }
 
     // good
     switch (foo) {
-      case 1: {
-        let x = 1;
-        break;
-      }
-      case 2: {
-        const y = 2;
-        break;
-      }
-      case 3: {
-        function f() {
-          // ...
+        case 1: {
+            let x = 1;
+            break;
         }
-        break;
-      }
-      case 4:
-        bar();
-        break;
-      default: {
-        class C {}
-      }
+        case 2: {
+            const y = 2;
+            break;
+        }
+        case 3: {
+            function f() {
+                // ...
+            }
+            break;
+        }
+        case 4:
+            bar();
+            break;
+        default: {
+            class C {}
+        }
     }
     ```
 
@@ -1913,15 +1913,15 @@
     ```javascript
     // bad
     const foo = maybe1 > maybe2
-      ? "bar"
-      : value1 > value2 ? "baz" : null;
+        ? "bar"
+        : value1 > value2 ? "baz" : null;
 
     // better
     const maybeNull = value1 > value2 ? 'baz' : null;
 
     const foo = maybe1 > maybe2
-      ? 'bar'
-      : maybeNull;
+        ? 'bar'
+        : maybeNull;
 
     // best
     const maybeNull = value1 > value2 ? 'baz' : null;
@@ -1957,14 +1957,14 @@
     ```javascript
     // bad
     if (test)
-      return false;
+        return false;
 
     // good
     if (test) return false;
 
     // good
     if (test) {
-      return false;
+        return false;
     }
 
     // bad
@@ -1972,7 +1972,7 @@
 
     // good
     function bar() {
-      return false;
+        return false;
     }
     ```
 
@@ -1982,19 +1982,19 @@
     ```javascript
     // bad
     if (test) {
-      thing1();
-      thing2();
+        thing1();
+        thing2();
     }
     else {
-      thing3();
+        thing3();
     }
 
     // good
     if (test) {
-      thing1();
-      thing2();
+        thing1();
+        thing2();
     } else {
-      thing3();
+        thing3();
     }
     ```
 
@@ -2016,9 +2016,9 @@
     // @return {Element} element
     function make(tag) {
 
-      // ...
+        // ...
 
-      return element;
+        return element;
     }
 
     // good
@@ -2028,9 +2028,9 @@
      */
     function make(tag) {
 
-      // ...
+        // ...
 
-      return element;
+        return element;
     }
     ```
 
@@ -2047,29 +2047,29 @@
 
     // bad
     function getType() {
-      console.log('fetching type...');
-      // set the default type to 'no type'
-      const type = this.type || 'no type';
+        console.log('fetching type...');
+        // set the default type to 'no type'
+        const type = this.type || 'no type';
 
-      return type;
+        return type;
     }
 
     // good
     function getType() {
-      console.log('fetching type...');
+        console.log('fetching type...');
 
-      // set the default type to 'no type'
-      const type = this.type || 'no type';
+        // set the default type to 'no type'
+        const type = this.type || 'no type';
 
-      return type;
+        return type;
     }
 
     // also good
     function getType() {
-      // set the default type to 'no type'
-      const type = this.type || 'no type';
+        // set the default type to 'no type'
+        const type = this.type || 'no type';
 
-      return type;
+        return type;
     }
     ```
 
@@ -2117,12 +2117,12 @@
 
     ```javascript
     class Calculator extends Abacus {
-      constructor() {
-        super();
+        constructor() {
+            super();
 
-        // FIXME: shouldn't use a global here
-        total = 0;
-      }
+            // FIXME: shouldn't use a global here
+            total = 0;
+        }
     }
     ```
 
@@ -2131,12 +2131,12 @@
 
     ```javascript
     class Calculator extends Abacus {
-      constructor() {
-        super();
+        constructor() {
+            super();
 
-        // TODO: total should be configurable by an options param
-        this.total = 0;
-      }
+            // TODO: total should be configurable by an options param
+            this.total = 0;
+        }
     }
     ```
 
@@ -2146,12 +2146,12 @@
 ## Whitespace
 
   <a name="whitespace--spaces"></a><a name="18.1"></a>
-  - [18.1](#whitespace--spaces) Use soft tabs (space character) set to 2 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
+  - [18.1](#whitespace--spaces) Use soft tabs (space character) set to 4 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
 
     ```javascript
     // bad
     function foo() {
-    ∙∙∙∙let name;
+    ∙∙let name;
     }
 
     // bad
@@ -2161,7 +2161,7 @@
 
     // good
     function baz() {
-    ∙∙let name;
+    ∙∙∙∙let name;
     }
     ```
 
@@ -2171,24 +2171,24 @@
     ```javascript
     // bad
     function test(){
-      console.log('test');
+        console.log('test');
     }
 
     // good
     function test() {
-      console.log('test');
+        console.log('test');
     }
 
     // bad
     dog.set('attr',{
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+        age: '1 year',
+        breed: 'Bernese Mountain Dog',
     });
 
     // good
     dog.set('attr', {
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+        age: '1 year',
+        breed: 'Bernese Mountain Dog',
     });
     ```
 
@@ -2198,17 +2198,17 @@
     ```javascript
     // bad
     if(isJedi) {
-      fight ();
+        fight ();
     }
 
     // good
     if (isJedi) {
-      fight();
+        fight();
     }
 
     // bad
     function fight () {
-      console.log ('Swooosh!');
+        console.log ('Swooosh!');
     }
 
     // good
@@ -2263,19 +2263,19 @@
 
     // bad
     $('#items').
-      find('.selected').
-        highlight().
-        end().
-      find('.open').
-        updateCount();
+        find('.selected').
+            highlight().
+          end().
+            find('.open').
+          updateCount();
 
     // good
     $('#items')
-      .find('.selected')
-        .highlight()
-        .end()
-      .find('.open')
-        .updateCount();
+        .find('.selected')
+          .highlight()
+          .end()
+        .find('.open')
+          .updateCount();
 
     // bad
     const leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
@@ -2303,53 +2303,53 @@
     ```javascript
     // bad
     if (foo) {
-      return bar;
+        return bar;
     }
     return baz;
 
     // good
     if (foo) {
-      return bar;
+        return bar;
     }
 
     return baz;
 
     // bad
     const obj = {
-      foo() {
-      },
-      bar() {
-      },
+        foo() {
+        },
+        bar() {
+        },
     };
     return obj;
 
     // good
     const obj = {
-      foo() {
-      },
+        foo() {
+        },
 
-      bar() {
-      },
+        bar() {
+        },
     };
 
     return obj;
 
     // bad
     const arr = [
-      function foo() {
-      },
-      function bar() {
-      },
+        function foo() {
+        },
+        function bar() {
+        },
     ];
     return arr;
 
     // good
     const arr = [
-      function foo() {
-      },
+        function foo() {
+        },
 
-      function bar() {
-      },
+        function bar() {
+        },
     ];
 
     return arr;
@@ -2362,29 +2362,29 @@
     // bad
     function bar() {
 
-      console.log(foo);
+        console.log(foo);
 
     }
 
     // also bad
     if (baz) {
 
-      console.log(qux);
+        console.log(qux);
     } else {
-      console.log(foo);
+        console.log(foo);
 
     }
 
     // good
     function bar() {
-      console.log(foo);
+        console.log(foo);
     }
 
     // good
     if (baz) {
-      console.log(qux);
+        console.log(qux);
     } else {
-      console.log(foo);
+        console.log(foo);
     }
     ```
 
@@ -2394,22 +2394,22 @@
     ```javascript
     // bad
     function bar( foo ) {
-      return foo;
+        return foo;
     }
 
     // good
     function bar(foo) {
-      return foo;
+        return foo;
     }
 
     // bad
     if ( foo ) {
-      console.log(foo);
+        console.log(foo);
     }
 
     // good
     if (foo) {
-      console.log(foo);
+        console.log(foo);
     }
     ```
 
@@ -2479,32 +2479,32 @@
     ```javascript
     // bad
     const story = [
-        once
-      , upon
-      , aTime
+          once
+        , upon
+        , aTime
     ];
 
     // good
     const story = [
-      once,
-      upon,
-      aTime,
+        once,
+        upon,
+        aTime,
     ];
 
     // bad
     const hero = {
-        firstName: 'Ada'
-      , lastName: 'Lovelace'
-      , birthYear: 1815
-      , superPower: 'computers'
+          firstName: 'Ada'
+        , lastName: 'Lovelace'
+        , birthYear: 1815
+        , superPower: 'computers'
     };
 
     // good
     const hero = {
-      firstName: 'Ada',
-      lastName: 'Lovelace',
-      birthYear: 1815,
-      superPower: 'computers',
+        firstName: 'Ada',
+        lastName: 'Lovelace',
+        birthYear: 1815,
+        superPower: 'computers',
     };
     ```
 
@@ -2535,74 +2535,74 @@
     ```javascript
     // bad
     const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully'
+        firstName: 'Dana',
+        lastName: 'Scully'
     };
 
     const heroes = [
-      'Batman',
-      'Superman'
+        'Batman',
+        'Superman'
     ];
 
     // good
     const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully',
+        firstName: 'Dana',
+        lastName: 'Scully',
     };
 
     const heroes = [
-      'Batman',
-      'Superman',
+        'Batman',
+        'Superman',
     ];
 
     // bad
     function createHero(
-      firstName,
-      lastName,
-      inventorOf
+        firstName,
+        lastName,
+        inventorOf
     ) {
-      // does nothing
+        // does nothing
     }
 
     // good
     function createHero(
-      firstName,
-      lastName,
-      inventorOf,
+        firstName,
+        lastName,
+        inventorOf,
     ) {
-      // does nothing
+        // does nothing
     }
 
     // good (note that a comma must not appear after a "rest" element)
     function createHero(
-      firstName,
-      lastName,
-      inventorOf,
-      ...heroArgs
+        firstName,
+        lastName,
+        inventorOf,
+        ...heroArgs
     ) {
-      // does nothing
+        // does nothing
     }
 
     // bad
     createHero(
-      firstName,
-      lastName,
-      inventorOf
+        firstName,
+        lastName,
+        inventorOf
     );
 
     // good
     createHero(
-      firstName,
-      lastName,
-      inventorOf,
+        firstName,
+        lastName,
+        inventorOf,
     );
 
     // good (note that a comma must not appear after a "rest" element)
     createHero(
-      firstName,
-      lastName,
-      inventorOf,
-      ...heroArgs
+        firstName,
+        lastName,
+        inventorOf,
+        ...heroArgs
     );
     ```
 
@@ -2617,20 +2617,20 @@
     ```javascript
     // bad
     (function () {
-      const name = 'Skywalker'
-      return name
+        const name = 'Skywalker'
+        return name
     })()
 
     // good
     (function () {
-      const name = 'Skywalker';
-      return name;
+        const name = 'Skywalker';
+        return name;
     }());
 
     // good, but legacy (guards against the function becoming an argument when two files with IIFEs are concatenated)
     ;((() => {
-      const name = 'Skywalker';
-      return name;
+        const name = 'Skywalker';
+        return name;
     })());
     ```
 
@@ -2733,12 +2733,12 @@
     ```javascript
     // bad
     function q() {
-      // ...
+        // ...
     }
 
     // good
     function query() {
-      // ...
+        // ...
     }
     ```
 
@@ -2762,22 +2762,22 @@
     ```javascript
     // bad
     function user(options) {
-      this.name = options.name;
+        this.name = options.name;
     }
 
     const bad = new user({
-      name: 'nope',
+        name: 'nope',
     });
 
     // good
     class User {
-      constructor(options) {
-        this.name = options.name;
-      }
+        constructor(options) {
+            this.name = options.name;
+        }
     }
 
     const good = new User({
-      name: 'yup',
+        name: 'yup',
     });
     ```
 
@@ -2800,25 +2800,25 @@
     ```javascript
     // bad
     function foo() {
-      const self = this;
-      return function () {
-        console.log(self);
-      };
+        const self = this;
+        return function () {
+            console.log(self);
+        };
     }
 
     // bad
     function foo() {
-      const that = this;
-      return function () {
-        console.log(that);
-      };
+        const that = this;
+        return function () {
+            console.log(that);
+        };
     }
 
     // good
     function foo() {
-      return () => {
-        console.log(this);
-      };
+        return () => {
+            console.log(this);
+        };
     }
     ```
 
@@ -2863,7 +2863,7 @@
 
     ```javascript
     function makeStyleGuide() {
-      // ...
+        // ...
     }
 
     export default makeStyleGuide;
@@ -2874,8 +2874,8 @@
 
     ```javascript
     const AirbnbStyleGuide = {
-      es6: {
-      },
+        es6: {
+        },
     };
 
     export default AirbnbStyleGuide;
@@ -2894,7 +2894,7 @@
 
     // bad
     const HttpRequests = [
-      // ...
+        // ...
     ];
 
     // good
@@ -2902,7 +2902,7 @@
 
     // good
     const HTTPRequests = [
-      // ...
+        // ...
     ];
 
     // best
@@ -2910,7 +2910,7 @@
 
     // best
     const Requests = [
-      // ...
+        // ...
     ];
     ```
 
@@ -2928,24 +2928,24 @@
     ```javascript
     // bad
     class Dragon {
-      getAge() {
-        // ...
-      }
+        getAge() {
+            // ...
+        }
 
-      setAge(value) {
-        // ...
-      }
+        setAge(value) {
+            // ...
+        }
     }
 
     // good
     class Dragon {
-      get age() {
-        // ...
-      }
+        get age() {
+            // ...
+        }
 
-      set age(value) {
-        // ...
-      }
+        set age(value) {
+            // ...
+        }
     }
     ```
 
@@ -2955,12 +2955,12 @@
     ```javascript
     // bad
     if (!dragon.age()) {
-      return false;
+        return false;
     }
 
     // good
     if (!dragon.hasAge()) {
-      return false;
+        return false;
     }
     ```
 
@@ -2969,18 +2969,18 @@
 
     ```javascript
     class Jedi {
-      constructor(options = {}) {
-        const lightsaber = options.lightsaber || 'blue';
-        this.set('lightsaber', lightsaber);
-      }
+        constructor(options = {}) {
+            const lightsaber = options.lightsaber || 'blue';
+            this.set('lightsaber', lightsaber);
+        }
 
-      set(key, val) {
-        this[key] = val;
-      }
+        set(key, val) {
+            this[key] = val;
+        }
 
-      get(key) {
-        return this[key];
-      }
+        get(key) {
+            return this[key];
+        }
     }
     ```
 
@@ -3062,7 +3062,7 @@
 
     ```javascript
     function foo() {
-      return true;
+        return true;
     }
     ```
 
