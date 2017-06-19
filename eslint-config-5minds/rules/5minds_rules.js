@@ -10,6 +10,7 @@ module.exports = {
     sourceType: 'script',
   },
   rules: {
+    indent: [2, 4, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     'object-shorthand': ['error', 'never'],
     'no-unused-vars': ['off', {vars: 'local', args: 'after-used'}],
     'arrow-parens': ['error', 'always'],
