@@ -67,7 +67,7 @@ debugger;
 ```javascript
 // bad
 function foo(a, b, a) {
-  console.log('value of the second a:', a);
+    console.log('value of the second a:', a);
 }
 ```
 
@@ -76,9 +76,9 @@ function foo(a, b, a) {
 ```javascript
 // bad
 const foo {
-  bar: 1,
-  qux: 2,
-  bar: 3,
+    bar: 1,
+    qux: 2,
+    bar: 3,
 }
 ```
 
@@ -87,14 +87,14 @@ const foo {
 ```javascript
 // bad
 switch (weekday) {
-  case 'monday':
-   	break;
-  case 'tuesday':
-    break;
-  case 'monday':
-    break;
-  default:
-    break;
+    case 'monday':
+        break;
+    case 'tuesday':
+        break;
+    case 'monday':
+        break;
+    default:
+        break;
 }
 ```
 
@@ -120,10 +120,10 @@ function doNothing() {
 ```javascript
 // bad
 try {
-  parseInt('adf', 10);
+    parseInt('adf', 10);
 } catch (error) {
-  error = new Error('You cannot parse letters.');
-  throw error;
+    error = new Error('You cannot parse letters.');
+    throw error;
 }
 ```
 
@@ -133,22 +133,22 @@ try {
 ```javascript
 // bad
 function negateNumber(num) {
-  if (Boolean(num)) {
-    return -1 * num;
-  } else {
-    throw new Error('missing input');
-  }
+    if (Boolean(num)) {
+        return -1 * num;
+    } else {
+        throw new Error('missing input');
+    }
 }
 
 ```
 ```javascript
 // good
 function negateNumber(num) {
-  if (num) {
-    return -1 * num;
-  } else {
-    throw new Error('missing input');
-  }
+    if (num) {
+        return -1 * num;
+    } else {
+        throw new Error('missing input');
+    }
 }
 ```
 
@@ -175,29 +175,29 @@ foo = 'bar';
 
 ```javascript
 const Foo = (function() {
-  // good -> This is a function within a function
-  function Foo() {
+    // good -> This is a function within a function
+    function Foo() {
 
-  }
-  // good -> This is an instance method(same as declared with ES6-Class)
-  Foo.prototype.compare = function compare(otherFoo) {
-    return this === otherFoo;
-  };
-  return Foo;
+    }
+    // good -> This is an instance method(same as declared with ES6-Class)
+    Foo.prototype.compare = function compare(otherFoo) {
+      return this === otherFoo;
+    };
+    return Foo;
 }());
 
 // good -> this is a global function
 function createFoo() {
-  return new Foo();
+    return new Foo();
 }
 ```
 
 ```javascript
 // bad -> function in nested block
 if (foo) {
-  function bar() {
+    function bar() {
 
-  }
+    }
 }
 ```
 
@@ -284,15 +284,15 @@ const hello = 'world'
 ```javascript
 // good
 function foo() {
-  console.log("done");
-return true;
+    console.log("done");
+    return true;
 }
 ```
 ```javascript
 // bad
 function foo() {
-  return true;
-  console.log("done");
+    return true;
+    console.log("done");
 }
 ```
 
@@ -301,11 +301,11 @@ function foo() {
 ```javascript
 // bad -> We expect this function to throw an error, then return
 (() => {
-  try {
-    throw new Error("Try"); // error is thrown but suspended until finally block ends
-  } finally {
-    return 3; // 3 is returned before the error is thrown, which we did not expect
-  }
+    try {
+        throw new Error("Try"); // error is thrown but suspended until finally block ends
+    } finally {
+        return 3; // 3 is returned before the error is thrown, which we did not expect
+    }
 })();
 ```
 
@@ -314,13 +314,13 @@ function foo() {
 ```javascript
 // good
 if (!(key in object)) {
-  // key is not in object
+    // key is not in object
 }
 ```
 ```javascript
 // bad
 if (!key in object) {
-  // equivalent to (!key) in object
+    // equivalent to (!key) in object
 }
 ```
 
@@ -366,19 +366,19 @@ if (typeof foo === 'strnng') {
 ```javascript
 // good
 list.forEach((element) => {
-  process(element);
+    process(element);
 });
 
 // good
 list.map((element) => {
-  return process(element);
+    return process(element);
 });
 ```
 
 ```javascript
 // bad
 list.map((element) => {
-  process(element);
+    process(element);
 });
 ```
 
@@ -387,11 +387,11 @@ list.map((element) => {
 ```javascript
 // good
 function doIf() {
-  var build;
+    var build;
 
-  if (true) {
-    build = true;
-  }
+    if (true) {
+        build = true;
+    }
 
 console.log(build);
 }
@@ -399,11 +399,11 @@ console.log(build);
 ```javascript
 // bad
 function doIf() {
-  if (true) {
-    var build = true;
-  }
+    if (true) {
+        var build = true;
+    }
 
-  console.log(build);
+    console.log(build);
 }
  ```
 
@@ -417,21 +417,21 @@ function doIf() {
 ```javascript
 // good
 function doSomething(condition) {
-  if (condition) {
-    return true;
-  } else {
-    return false;
-  }
+    if (condition) {
+        return true;
+    } else {
+        return false;
+    }
 }
 ```
 ```javascript
 // bad
 function doSomething(condition) {
-  if (condition) {
-    return true;
-  } else {
-    return;
-  }
+    if (condition) {
+        return true;
+    } else {
+        return;
+    }
 }
 ```
 
@@ -440,15 +440,15 @@ function doSomething(condition) {
 ```javascript
 // good
 if (foo) {
-  bar();
+    bar();
 }
 ```
 ```javascript
 // bad
 if (foo)
-  bar();
+    bar();
 else
-  baz();
+    baz();
 ```
 
 2.5 **default-case:** require `default` cases in `switch` statements.
@@ -466,8 +466,8 @@ switch (weekday) {
 ```javascript
 // bad
 switch (weekday) {
-  case 'Monday':
-    break;
+    case 'Monday':
+      break;
 }
 ```
 
@@ -521,20 +521,20 @@ if (foo == 0) {
 ```javascript
 // good
 for (key in foo) {
-  if (Object.prototype.hasOwnProperty.call(foo, key)) {
-    doSomething(key);
-  }
+    if (Object.prototype.hasOwnProperty.call(foo, key)) {
+        doSomething(key);
+    }
 }
 
 // better
 Object.keys(foo).forEach((key) => {
-  doSomething(key);
+    doSomething(key);
 });
 ```
 ```javascript
 // bad
 for (key in foo) {
-  doSomething(key);
+    doSomething(key);
 }
 ```
 
@@ -550,7 +550,7 @@ alert('Hello world');
 ```javascript
 // good
 function factorial (n) {
-  return !(n > 1) ? 1 : factorial(n - 1) * n;
+    return !(n > 1) ? 1 : factorial(n - 1) * n;
 }
 
 [1, 2, 3, 4, 5].map(factorial);
@@ -558,7 +558,7 @@ function factorial (n) {
 ```javascript
 // bad
 [1, 2, 3, 4, 5].map(function(n) {
-  return !(n > 1) ? 1 : arguments.callee(n - 1) * n;
+    return !(n > 1) ? 1 : arguments.callee(n - 1) * n;
 });
 ```
 
@@ -567,23 +567,23 @@ function factorial (n) {
 ```javascript
 // good
 switch (foo) {
-  case 1: {
-    let x = 1;
-    break;
-  }
-  default: {
-    class C {}
-  }
+    case 1: {
+        let x = 1;
+        break;
+    }
+    default: {
+        class C {}
+    }
 }
 ```
 ```javascript
 // bad
 switch (foo) {
-  case 1:
-    let x = 1;
-    break;
-  default:
-    class C {}
+    case 1:
+        let x = 1;
+        break;
+    default:
+        class C {}
 }
 ```
 
@@ -594,20 +594,20 @@ switch (foo) {
 ```javascript
 // good
 function foo() {
-  if (x) {
-    return y;
-  }
-  var t = "foo";
+    if (x) {
+        return y;
+    }
+    var t = "foo";
 }
 ```
 ```javascript
 // bad
 function foo() {
-  if (x) {
-    return y;
-  } else {
-    var t = "foo";
-  }
+    if (x) {
+        return y;
+    } else {
+        var t = "foo";
+    }
 }
 ```
 
@@ -657,7 +657,7 @@ Object.prototype.foo = 'bar';
 ```javascript
 // good
 var boundGetName = (function getName() {
-  return this.name;
+    return this.name;
 }).bind({ name: "ESLint" });
 
 console.log(boundGetName());
@@ -676,7 +676,7 @@ console.log(boundGetName());
 ```javascript
 // bad
 A: while (a) {
-  break A;
+    break A;
 }
 ```
 
@@ -685,19 +685,19 @@ A: while (a) {
 ```javascript
 // good
 switch(foo) {
-  case 1:
-    doSomething();
-    break;
+    case 1:
+      doSomething();
+      break;
 
-  case 2:
-    doSomething();
+    case 2:
+      doSomething();
 }
 ```
 ```javascript
 // bad
 switch(foo) {
-  case 1:
-    doSomething();
+    case 1:
+      doSomething();
 
   case 2:
     doSomething();
@@ -706,7 +706,7 @@ switch(foo) {
 
 2.21 **no-floating-decimal:** disallow leading or trailing decimal points in numeric literals.
 
-  ```javascript
+```javascript
 // good
 var num = 0.5;
 var num = 2.0;
@@ -740,7 +740,7 @@ setTimeout("alert('This is like eval.');", 100);
 ```javascript
 // bad
 setTimeout(() => {
-  alert('This is not like eval.');
+    alert('This is not like eval.');
 }, 100);
 ```
 <!-- 2.31 **no-invalid-this:** disallow `this` keywords outside of classes or class-like objects. -->
@@ -750,7 +750,7 @@ setTimeout(() => {
 ```javascript
 // bad
 Foo.prototype.__iterator__ = function() {
-  return new FooIterator(this);
+    return new FooIterator(this);
 };
 ```
 
@@ -759,7 +759,7 @@ Foo.prototype.__iterator__ = function() {
 ```javascript
 // bad
 A: while (a) {
-  break A;
+    break A;
 }
 ```
 
@@ -768,15 +768,15 @@ A: while (a) {
 ```javascript
 // good
 function bar() {
-  baz();
+    baz();
 }
 ```
 ```javascript
 // bad
 function bar() {
-  {
-    baz();
-  }
+    {
+      baz();
+    }
 }
 ```
 
@@ -784,8 +784,8 @@ function bar() {
 ```javascript
 // good
 do {
-  function a() { return i; };
-  a();
+    function a() { return i; };
+    a();
 } while (i);
 ```
 
@@ -866,7 +866,7 @@ const foo = "Copyright \251"; // octal
 ```javascript
 // bad
 function foo(bar) {
-  bar++;
+    bar++;
 }
 ```
 
@@ -883,7 +883,7 @@ const a = obj.__proto__;
 
 2.37 **no-redeclare:** disallow variable redeclaration.
 
-  ```javascript
+```javascript
 // good
 let a = 3;
 a = 10;
@@ -902,7 +902,7 @@ let a = 10;
 ```javascript
 // bad
 function doSomething() {
-  return foo = bar + 2;
+    return foo = bar + 2;
 }
 
 ```
@@ -950,7 +950,7 @@ while (val = foo(), val < 42);
 
 2.43 **no-throw-literal:** disallow throwing literals as exceptions.
 
-  ```javascript
+```javascript
 // good
 throw new Error('error');
 ```
@@ -963,7 +963,7 @@ throw 'error';
 
 2.44 **no-unused-expressions:** disallow unused expressions.
 
-  ```javascript
+```javascript
 // good
 a ? b() : c();
 ```
@@ -977,10 +977,10 @@ a ? b : 0;
 ```javascript
 // good
 A: {
-  if (foo()) {
-    break A;
-  }
-  bar();
+    if (foo()) {
+        break A;
+    }
+    bar();
 }
 ```
 ```javascript
@@ -1023,14 +1023,14 @@ let foo = "hol\a"; // > foo = "hola"
 ```javascript
 // good
 function foo() {
-  doSomething();
+    doSomething();
 }
 ```
 ```javascript
 // bad
 function foo() {
-  doSomething();
-  return;
+    doSomething();
+    return;
 }
 ```
 
@@ -1048,7 +1048,7 @@ var foo = void bar();
 ```javascript
 // bad
 with (point) {
-  r = Math.sqrt(x * x + y * y); // is r a member of point?
+    r = Math.sqrt(x * x + y * y); // is r a member of point?
 }
 ```
 
@@ -1072,21 +1072,21 @@ parseInt('2000');
 ```javascript
 // good
 function doSomething() {
-  var first;
-  var second;
-  if (true) {
-    first = true;
-  }
+    var first;
+    var second;
+    if (true) {
+        first = true;
+    }
 }
 ```
 ```javascript
 // bad
 function doSomething() {
-  var first;
-  if (true) {
-    first = true;
-  }
-  var second;
+    var first;
+    if (true) {
+        first = true;
+    }
+    var second;
 }
 ```
 
@@ -1107,13 +1107,13 @@ var x = (function () { return { y: 1 };})();
 ```javascript
 // good
 if (color === 'red') {
-  // ...
+    // ...
 }
 ```
 ```javascript
 // bad
 if ('red' === color) {
-  // ...
+    // ...
 }
 ```
 
@@ -1144,9 +1144,9 @@ delete x;
 var x = foo;
 function bar() {
 x:
-  for (;;) {
-    break x;
-  }
+    for (;;) {
+        break x;
+    }
 }
 ```
 
@@ -1160,7 +1160,7 @@ x:
 // bad
 var a = 3;
 function b() {
-  var a = 10;
+    var a = 10;
 }
 ```
 
@@ -1231,9 +1231,9 @@ var fs = require("fs");
 ```javascript
 // bad
 function foo() {
-  if (condition) {
-    var fs = require("fs");
-  }
+    if (condition) {
+        var fs = require("fs");
+    }
 }
 ```
 
@@ -1309,18 +1309,18 @@ if (foo) {bar = 0;}
 ```javascript
 // good
 if (foo) {
-  bar();
+    bar();
 } else {
-  baz();
+    baz();
 }
 ```
 ```javascript
 // bad
 if (foo) {
-  bar();
+    bar();
 }
 else {
-  baz();
+    baz();
 }
 ```
 
@@ -1343,15 +1343,15 @@ const snake_case = 'bad';
 ```javascript
 // good
 const foo = {
-  bar: 'baz',
-  qux: 'quux',
+    bar: 'baz',
+    qux: 'quux',
 };
 ```
 ```javascript
 // bad
 const foo = {
-  bar: 'baz',
-  qux: 'quux'
+    bar: 'baz',
+    qux: 'quux'
 };
 ```
 
@@ -1373,19 +1373,19 @@ const arr = [1 , 2];
 ```javascript
 // good
 function bar() {
-  return {
-    'a': 1,
-    'b:': 2
-  };
+    return {
+        'a': 1,
+        'b:': 2
+    };
 }
 ```
 ```javascript
 // bad
 function bar() {
-  return {
-    'a': 1
-    ,'b:': 2
-  };
+    return {
+        'a': 1
+        ,'b:': 2
+    };
 }
 ```
 
@@ -1424,13 +1424,13 @@ var foo = function foo() {};
 ```javascript
 // good
 arr.filter(function isEven(a) {
-  return (a % 2) === 0;
+    return (a % 2) === 0;
 });
 ```
 ```javascript
 // bad
 arr.filter(function(a) {
-  return (a % 2) === 0;
+    return (a % 2) === 0;
 });
 ```
 
@@ -1442,13 +1442,13 @@ arr.filter(function(a) {
 
 <!-- 6.144 **id-match:** require identifiers to match a specified regular expression. -->
 
-6.12 **indent:** enforce consistent indentation(2 spaces).
+6.12 **indent:** enforce consistent indentation(4 spaces).
 
 <!-- 6.146 **jsx-quotes:** enforce the consistent use of either double or single quotes in JSX attributes. -->
 
 6.13 **key-spacing:** enforce consistent spacing between keys and values in object literal properties.
 
-  ```javascript
+    ```javascript
 // good
 var obj = { "foo": 42 };
 
@@ -1464,21 +1464,21 @@ var obj = { "foo" : 42 };
 ```javascript
 // good
 if (foo) {
-  //...
+    //...
 } else if (bar) {
-  //...
+    //...
 } else {
-  //...
+    //...
 }
 ```
 ```javascript
 // bad
 if (foo) {
-  //...
+    //...
 }else if (bar) {
-  //...
+    //...
 } else{
-  //...
+    //...
 }
 ```
 
@@ -1559,14 +1559,14 @@ const c = new Constructor;
 // good
 doSomething()
 .then(()=> {
-  // ..
+    // ..
 });
 
 ```
 ```javascript
 // bad
 doSomething().then(()=> {
-  // ..
+    // ..
 });
 ```
 
@@ -1592,20 +1592,20 @@ continue;
 ```javascript
 // good
 if (foo) {
-  // ...
-} else if (bar) {
     // ...
-  }
+} else if (bar) {
+        // ...
+    }
 }
 ```
 ```javascript
 // bad
 if (foo) {
-  // ...
-} else {
-  if (bar) {
     // ...
-  }
+} else {
+    if (bar) {
+        // ...
+    }
 }
 ```
 
@@ -1727,9 +1727,9 @@ var obj = { 'foo': 'bar' };
 ```javascript
 // good
 var obj = {
-  foo: "foo",
-  bar: "bar",
-  baz: "baz"
+    foo: "foo",
+    bar: "bar",
+    baz: "baz"
 };
 ```
 ```javascript
@@ -1754,11 +1754,11 @@ var bar, baz;
 ```javascript
 // good
 const a = 0,
-  b = 0;
+    b = 0;
 ```
 ```javascript
 // bad
-const a = 0,  b = 0;
+const a = 0,    b = 0;
 ```
 
 6.37 **operator-assignment:** require or disallow assignment operator shorthand where possible.
@@ -1779,14 +1779,14 @@ x = x + y;
 ```javascript
 // good
 if (a) {
-  b();
+    b();
 }
 ```
 ```javascript
 // bad
 if (a) {
 
-  b();
+    b();
 
 }
 ```
@@ -1796,19 +1796,19 @@ if (a) {
 ```javascript
 // good
 var object1 = {
-  "a-b": 0,
-  "0x0": 0,
-  "1e2": 0,
-  foo: 0,
+    "a-b": 0,
+    "0x0": 0,
+    "1e2": 0,
+    foo: 0,
 };
 ```
 ```javascript
 // bad
 var object = {
-  "a": 0,
-  "0": 0,
-  "true": 0,
-  "null": 0
+    "a": 0,
+    "0": 0,
+    "true": 0,
+    "null": 0
 };
 ```
 
@@ -1860,13 +1860,13 @@ var foo ;
 ```javascript
 // good
 if (a) {
-  b();
+    b();
 }
 ```
 ```javascript
 // bad
 if (a){
-  b();
+    b();
 }
 ```
 
@@ -1875,16 +1875,16 @@ if (a){
 ```javascript
 // good
 function foo() {
-  return function () {
+    return function () {
 
-  }
+    }
 };
 
 ```
 ```javascript
 // bad
 function foo () {
-  // ...
+    // ...
 };
 
 ```
@@ -1907,7 +1907,7 @@ foo( 'bar' );
 ```javascript
 // good
 a + b
-  ```
+    ```
 ```javascript
 // bad
 a+b
@@ -1951,7 +1951,7 @@ The Unicode Byte Order Mark (BOM) is used to specify whether code units are big 
 ```javascript
 // good
 const foo = () => {
-  return 0;
+    return 0;
 };
 ```
 ```javascript
@@ -1978,25 +1978,25 @@ const foo = () => 0;
 ```javascript
 // good
 class A {
-  constructor() { }
+    constructor() { }
 }
 // good
 class A extends B {
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 }
 ```
 ```javascript
 // bad
 class A {
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 }
 // bad
 class A extends B {
-  constructor() { }
+    constructor() { }
 }
 ```
 
@@ -2049,8 +2049,8 @@ a = 1;
 ```javascript
 // bad
 class Foo {
-  bar() { }
-  bar() { }
+    bar() { }
+    bar() { }
 }
 ```
 
@@ -2081,19 +2081,19 @@ var foo = new Symbol('foo');
 ```javascript
 // good
 class A extends B {
-  constructor() {
-    super();
-    this.a = 0;
-  }
+    constructor() {
+        super();
+        this.a = 0;
+    }
 }
 ```
 ```javascript
 // bad
 class A extends B {
-  constructor() {
-    this.a = 0;
-    super();
-  }
+    constructor() {
+        this.a = 0;
+        super();
+    }
 }
 ```
 
@@ -2106,23 +2106,23 @@ var a = { x: 0 };
 ```javascript
 // bad
 var a = { ['x']: 0 };
-  ```
+    ```
 
 7.13 **no-useless-constructor:** disallow unnecessary constructors.
 
 ```javascript
 // good
 class A {
-  constructor () {
-    doSomething();
-  }
+    constructor () {
+        doSomething();
+    }
 }
 ```
 ```javascript
 // bad
 class A {
-  constructor () {
-  }
+    constructor () {
+    }
 }
 ```
 
@@ -2154,14 +2154,14 @@ var qux;
 ```javascript
 // good
 var foo = {
-  "bar-baz": function() {},
-  "qux": qux
+    "bar-baz": function() {},
+    "qux": qux
 };
 ```
 ```javascript
 // bad
 var foo = {
-  "bar-baz"() {}
+    "bar-baz"() {}
 };
 ```
 
@@ -2170,13 +2170,13 @@ var foo = {
 ```javascript
 // good
 app.get((req, res, next) => {
-  res.send(this.response);
+    res.send(this.response);
 });
 ```
 ```javascript
 // bad
 app.get(function (req, res, next) {
-  res.send(this.response); // this is not what you might expect here
+    res.send(this.response); // this is not what you might expect here
 });
 ```
 
@@ -2205,13 +2205,13 @@ parseInt("111110111", 2) === 503;
 ```javascript
 // good
 function foo(...args) {
-  console.log(args);
+    console.log(args);
 }
 ```
 ```javascript
 // bad
 function foo() {
-  console.log(arguments);
+    console.log(arguments);
 }
 ```
 
@@ -2241,15 +2241,15 @@ var str = 'Hello, ' + name + '!';
 ```javascript
 // good
 function* foo() {
-  yield 5;
-  return 10;
+    yield 5;
+    return 10;
 }
 
 ```
 ```javascript
 // bad
 function* foo() {
-  return 10;
+    return 10;
 }
 ```
 
@@ -2267,7 +2267,7 @@ fn(... args)
 
 <!-- 7.238 **symbol-description:** require symbol descriptions. -->
 
-7.25 **template-curly-spacing:**  disallow spacing around embedded expressions of template strings.
+7.25 **template-curly-spacing:**    disallow spacing around embedded expressions of template strings.
 
 ```javascript
 // good
@@ -2283,6 +2283,6 @@ fn(... args)
 ```javascript
 // good
 function* generator() {
-  yield* other();
+    yield* other();
 }
 ```
