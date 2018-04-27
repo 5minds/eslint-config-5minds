@@ -6,7 +6,7 @@ module.exports = {
     mocha: true,
   },
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 2017,
     sourceType: 'script',
   },
   rules: {

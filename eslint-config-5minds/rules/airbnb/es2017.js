@@ -1,9 +1,10 @@
 module.exports = {
   env: {
-    es6: true
+    node: true,
+    mocha: true,
   },
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 2017,
     sourceType: 'module',
     ecmaFeatures: {
       generators: false,
