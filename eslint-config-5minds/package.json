@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "version": "0.2.0-pre1",
+  "version": "0.2.0",
   "description": "Provide the eslint configs",
   "main": "index.js",
   "author": "5Minds IT-Solutions GmbH & Co. KG <info@5minds.de>",
