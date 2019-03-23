@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: [
     'no-null'
-  ]
+  ],
   rules: {
     'arrow-parens': ['error', 'always'],
     'arrow-body-style': ['error', 'always'],
