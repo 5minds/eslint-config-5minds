@@ -43,6 +43,7 @@ module.exports = {
     ],
     'no-underscore-dangle': ['error', {allowAfterThis: true}],
     'no-unused-vars': ['off', {vars: 'local', args: 'after-used'}],
+    'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
     'no-void': ['off'],
     'object-shorthand': ['error', 'never'],
     'object-curly-spacing': ['error', 'never'],
