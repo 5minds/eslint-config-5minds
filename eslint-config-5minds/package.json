@@ -20,7 +20,8 @@
   ],
   "dependencies": {
     "eslint": "^5.15.3",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-no-null": "^1.0.2"
   },
   "peerDependencies": {
     "eslint": "^5.15.3",

@@ -9,6 +9,9 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: 'script',
   },
+  plugins: [
+    'no-null'
+  ]
   rules: {
     'arrow-parens': ['error', 'always'],
     'arrow-body-style': ['error', 'always'],
@@ -26,6 +29,7 @@ module.exports = {
     'no-bitwise': ['error', {allow: ['~', '^', '|', '&', '|=', '&=', '^=']}],
     'no-confusing-arrow': ['error', {allowParens: false}],
     'no-multiple-empty-lines': ['error', {max: 1}],
+    'no-null/no-null': ['error'],
     'no-restricted-syntax': [
       'error',
       {
