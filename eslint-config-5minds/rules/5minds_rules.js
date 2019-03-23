@@ -15,7 +15,8 @@ module.exports = {
   rules: {
     'arrow-parens': ['error', 'always'],
     'arrow-body-style': ['error', 'always'],
-    curly: ['error', 'multi-line'],
+    curly: ['error', 'all'],
+    complexity: ['error', 20],
     'implicit-arrow-linebreak': ['off'],
 
     // specify the maximum length of a line in your program
@@ -23,6 +24,11 @@ module.exports = {
     'max-len': [2, 150, 2, {
       ignoreUrls: true,
       ignoreComments: false,
+    }],
+    'max-lines': ['error', {
+      max: 3000,
+      skipBlankLines: false,
+      skipComments: false,
     }],
     'newline-per-chained-call': ['error', {ignoreChainWithDepth: 1}],
     'nonblock-statement-body-position': ['off'],
@@ -54,6 +60,7 @@ module.exports = {
     'padded-blocks': ['error', {classes: 'always'}],
     'prefer-destructuring': ['off'],
     'require-await': ['error'],
+    'sort-imports': ['error'],
     strict: ['error', 'safe'],
   },
 };
