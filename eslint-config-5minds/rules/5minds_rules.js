@@ -10,26 +10,45 @@ module.exports = {
     sourceType: 'script',
   },
   rules: {
-    'object-shorthand': ['error', 'never'],
-    'no-unused-vars': ['off', {vars: 'local', args: 'after-used'}],
     'arrow-parens': ['error', 'always'],
     'arrow-body-style': ['error', 'always'],
-    'no-confusing-arrow': ['error', {allowParens: false}],
-    'newline-per-chained-call': ['error', {ignoreChainWithDepth: 1}],
-    'object-curly-spacing': ['error', 'never'],
-    'no-underscore-dangle': ['error', {allowAfterThis: true}],
-    'no-void': 'off',
-    'no-bitwise': ['error', {allow: ['~', '^', '|', '&', '|=', '&=', '^=']}],
-    'padded-blocks': ['error', {classes: 'always'}],
-    'no-multiple-empty-lines': ['error', {max: 1}],
-    strict: ['error', 'safe'],
+    curly: ['error', 'multi-line'],
+    'implicit-arrow-linebreak': ['off'],
 
     // specify the maximum length of a line in your program
     // http://eslint.org/docs/rules/max-len
-    'max-len': [2, 120, 2, {
+    'max-len': [2, 150, 2, {
       ignoreUrls: true,
       ignoreComments: false,
     }],
-    'import/no-extraneous-dependencies': ['error', {devDependencies: ['**/tests/**/*.js']}],
+    'newline-per-chained-call': ['error', {ignoreChainWithDepth: 1}],
+    'nonblock-statement-body-position': ['off'],
+    'no-bitwise': ['error', {allow: ['~', '^', '|', '&', '|=', '&=', '^=']}],
+    'no-confusing-arrow': ['error', {allowParens: false}],
+    'no-multiple-empty-lines': ['error', {max: 1}],
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'ForInStatement',
+        message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+      },
+      {
+        selector: 'LabeledStatement',
+        message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+      },
+      {
+        selector: 'WithStatement',
+        message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+      },
+    ],
+    'no-underscore-dangle': ['error', {allowAfterThis: true}],
+    'no-unused-vars': ['off', {vars: 'local', args: 'after-used'}],
+    'no-void': ['off'],
+    'object-shorthand': ['error', 'never'],
+    'object-curly-spacing': ['error', 'never'],
+    'padded-blocks': ['error', {classes: 'always'}],
+    'prefer-destructuring': ['off'],
+    'require-await': ['error'],
+    strict: ['error', 'safe'],
   },
 };
