@@ -59,6 +59,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'never'],
     'padded-blocks': ['error', {classes: 'always'}],
     'prefer-destructuring': ['off'],
+    'radix': ['error', 'as-needed'],
     'require-await': ['error'],
     'sort-imports': ['error'],
     strict: ['error', 'safe'],
