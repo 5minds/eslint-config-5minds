@@ -19,6 +19,7 @@
     "editorconfig"
   ],
   "dependencies": {
+    "eslint-config-airbnb": "17.1.0",
     "confusing-browser-globals": "^1.0.6",
     "eslint": "^5.15.3",
     "eslint-plugin-import": "^2.16.0",
