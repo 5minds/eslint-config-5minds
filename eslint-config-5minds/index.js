@@ -29,7 +29,7 @@ module.exports = {
       ignoreComments: false,
     }],
     'max-lines': ['error', {
-      max: 3000,
+      max: 1000,
       skipBlankLines: false,
       skipComments: false,
     }],
@@ -55,7 +55,7 @@ module.exports = {
       },
     ],
     'no-underscore-dangle': ['error', {allowAfterThis: true}],
-    'no-unused-vars': ['off', {vars: 'local', args: 'after-used'}],
+    'no-unused-vars': ['error'],
     'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
     'no-void': ['off'],
     'object-shorthand': ['error', 'never'],
