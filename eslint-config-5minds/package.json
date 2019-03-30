@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "version": "0.2.0",
+  "version": "1.0.0-alpha.1",
   "description": "Provide the eslint configs",
   "main": "index.js",
   "author": "5Minds IT-Solutions GmbH & Co. KG <info@5minds.de>",
@@ -19,11 +19,15 @@
     "editorconfig"
   ],
   "dependencies": {
-    "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.11.0"
+    "eslint-config-airbnb": "17.1.0",
+    "confusing-browser-globals": "^1.0.6",
+    "eslint": "^5.15.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-no-null": "^1.0.2"
   },
   "peerDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.11.0"
+    "eslint": "^5.15.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-no-null": "^1.0.2"
   }
 }
