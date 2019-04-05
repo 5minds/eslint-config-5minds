@@ -18,12 +18,11 @@ module.exports = {
   rules: {
     'arrow-parens': ['error', 'always'],
     'arrow-body-style': ['error', 'always'],
-    curly: ['error', 'all'],
-    complexity: ['error', 20],
+    'class-methods-use-this': ['off'],
+    'curly': ['error', 'all'],
+    'complexity': ['error', 20],
     'implicit-arrow-linebreak': ['off'],
-
-    // specify the maximum length of a line in your program
-    // http://eslint.org/docs/rules/max-len
+    'lines-between-class-members': ['error', 'always', {exceptAfterSingleLine: true}],
     'max-len': [2, 150, 2, {
       ignoreUrls: true,
       ignoreComments: false,
@@ -35,10 +34,11 @@ module.exports = {
     }],
     'newline-per-chained-call': ['error', {ignoreChainWithDepth: 1}],
     'nonblock-statement-body-position': ['off'],
+    'no-await-in-loop': ['off'],
     'no-bitwise': ['error', {allow: ['~', '^', '|', '&', '|=', '&=', '^=']}],
     'no-confusing-arrow': ['error', {allowParens: false}],
     'no-multiple-empty-lines': ['error', {max: 1}],
-    'no-null/no-null': ['error'],
+    'no-null/no-null': ['warn'],
     'no-restricted-syntax': [
       'error',
       {
@@ -65,6 +65,6 @@ module.exports = {
     'radix': ['error', 'as-needed'],
     'require-await': ['error'],
     'sort-imports': ['error'],
-    strict: ['error', 'safe'],
+    'strict': ['error', 'safe'],
   },
 };
