@@ -21,6 +21,7 @@ module.exports = {
     'class-methods-use-this': ['off'],
     'curly': ['error', 'all'],
     'complexity': ['error', 20],
+    'function-paren-newline': ['error', 'multiline'],
     'implicit-arrow-linebreak': ['off'],
     'lines-between-class-members': ['error', 'always', {exceptAfterSingleLine: true}],
     'max-len': [2, 150, 2, {
@@ -37,6 +38,7 @@ module.exports = {
     'no-await-in-loop': ['off'],
     'no-bitwise': ['error', {allow: ['~', '^', '|', '&', '|=', '&=', '^=']}],
     'no-confusing-arrow': ['error', {allowParens: false}],
+    'no-continue': ['off'],
     'no-multiple-empty-lines': ['error', {max: 1}],
     'no-null/no-null': ['warn'],
     'no-restricted-syntax': [
@@ -64,7 +66,7 @@ module.exports = {
     'prefer-destructuring': ['off'],
     'radix': ['error', 'as-needed'],
     'require-await': ['error'],
-    'sort-imports': ['error'],
+    'sort-imports': ['error', {"ignoreDeclarationSort": true}],
     'strict': ['error', 'safe'],
   },
 };
